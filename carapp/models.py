@@ -28,6 +28,10 @@ class Order(models.Model):
     amount=models.IntegerField()
     order_time = models.DateTimeField(auto_now_add=True)
     
+    @classmethod
+    def search_by_title(cls,search_term):
+        carapp = cls.objects.filter(title__icontains=search_term)
+        return carapp
     
 
 

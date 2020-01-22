@@ -7,3 +7,15 @@ h1{
     text-align: center;
 
 }
+#gari {
+    font-family: 'Dosis', sans-serif;
+    font-size: 30px;
+  }
+  .navbar-default {
+    background-color: darkcyan;
+    border-color: #E7E7E7;
+  }
+  .navbar-brand{
+    color:black;
+  }
+  
