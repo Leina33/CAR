@@ -1,2 +1,326 @@
 {%extends 'base.html' %}
-<h1>welcome to online car sales</h1>
+{% block content %}
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:400,700i&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <title>Online Car sales</title>
+  </head>
+  <body>
+
+    <div id="tamu">
+      <h1 class="text-center">How it works</h1>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mt-4 text-center">
+            <div class="card">
+              <div class="card-title">
+                <h4>Choose the Car of your choice</h4>
+              </div>
+              <div class="card-body">
+                <p>All is set for you to choose your favourite car</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mt-4 text-center">
+            <div class="card">
+              <div class="card-title">
+                <h4>We communicate with you upon </h4>
+              </div>
+              <div class="card-body">
+                <p>
+                  Order the number of cars .<br>Tell us your place
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mt-4 text-center">
+            <div class="card">
+              <div class="card-title">
+                <h4>we assist you  go through our sales person to choose the brand car you</h4>
+                <p></p>
+              </div>
+              <div class="card-body">
+                <p>
+                  We will assist you to make <br> payments through our loans agencies
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="order"></div>
+    <div class="order mt-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div id="order-section"></div>
+            <h1 class="text-center pt-4">place an order</h1>
+            <div class="alert alert-success mt-2" id="success">
+              <strong>Success!</strong> your oder for the this car will be communicated shortly
+              <span style="color: red; font-size:16px" id="place"></span> the
+              delivery fee is $20000. Thank you for shopping with us.
+            </div>
+            <div class="alert alert-primary" id="no-delivery">
+                <strong>Success!</strong> We will be waiting for you to pick your car keys and log book
+              </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="card">
+                  <card-title>
+                    <h3 class="pt-4 pl-5">Let us know your car of interest</h3>
+                  </card-title>
+                  <div class="card-body">
+                    <div id="pizza">
+                    </div>
+                    <form id="myform">
+                      <div class="form-group">
+                        <label for="pizza-size">car brand</label>
+                        <select class="form-control" id="pizza-size">
+                          <option value="small">Toyota </option>
+                          <option value="medium">Saloon car</option>
+                          <option value="large"> Jeep</option>
+                          <option value="large"> Audi</option>
+                          <option value="large"> Mercendenz Benz</option>
+                          <option value="large"> Roll Royce</option>
+                          <option value="large"> Lamborghini</option>
+                          <option value="large">Vitz</option>
+                          <option value="large"> Mazda</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <!-- pizza-crust -- car-color div -->
+                        <label for="car-color">Which color do you like to have</label>
+                        <!-- #pizza-crust -- gari -->
+                        <select class="form-control" id="gari"> 
+                          <option value="color">Golden Black</option>
+                          <option value="color">Grey</option>
+                          <option value="color">
+                            Brown</option
+                          >
+                        </select>
+                      </div>
+                      <p>Engine capacity</p>
+                      <!-- toppings div -- capacity -->
+                      <div class="capacity">
+                        <div class="form-check form-check-inline">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="inlineCheckbox1"
+                            value="2000cc"
+                          />
+                          <label class="form-check-label" for="inlineCheckbox1"
+                            >1600cc</label
+                          >
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="inlineCheckbox2"
+                            value="1000cc"
+                          />
+                          <label class="form-check-label" for="inlineCheckbox2"
+                            ></label
+                          >
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="inlineCheckbox2"
+                            value="bacon"
+                          />
+                          <label class="form-check-label" for="inlineCheckbox2"
+                            >3400cc</label
+                          >
+                        </div>
+                      </div>
+                      <button
+                        type="submit"
+                        class="btn-success btn mt-3"
+                        id="orderbtn"
+                      >
+                        Order
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card mt-1">
+                  <div class="card-title d-inline-flex">
+                    <h3 class="p-4">View selected car in cart</h3>
+                    <i class="p-4 fa fa-shopping-cart total"
+                      ><button
+                        class="btn-success btn ml-2"
+                        value="0"
+                        id="quantity"
+                      >
+                        0
+                      </button></i
+                    >
+                  </div>
+                  <div class="card-body">
+                    <table id="table">
+                      <tr>
+                        <td>Size</td>
+                        <td>number of seats</td>
+                        <td>Toppings</td>
+                        <td>Total Price</td>
+                      </tr>
+                    </table>
+
+                    <div id="cart">
+                      <p class="text-center pt-4">
+                        You do not have any item in the cart
+                      </p>
+                    </div>
+
+                    <div id="items"></div>
+                    <a href="#order-section">
+                      <div class="checkout">
+                        <button
+                          class="btn-success btn m-4"
+                          data-toggle="modal"
+                          data-target="#exampleModalCenter"
+                          id="gettotal"
+                        >
+                          Checkout
+                        </button>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModalCenter"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalCenterTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" id="exampleModalLongTitle">
+              Confirm the price
+            </h3>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>
+              Amount you are to pay for your order is ksh
+              <span id="money" style="color: yellow"></span>
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              id="myModel"
+              data-dismiss="modal"
+            >
+              Confirm
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="contact-section"></div>
+    <footer>
+      <div id="footer-text">
+        <h2 id="brand">Online <span>Cars</span></h2>
+        <p>
+          Copyright &copy; All rights reserved Dominic 
+        </p>
+      </div>
+
+      <div class="vertical"></div>
+      <div class="float-right m-4">
+        <div class="mapouter">
+          <div class="gmap_canvas">
+            <iframe
+              width="511"
+              height="277"
+              id="gmap_canvas"
+              src="https://maps.google.com/maps?q=dominos%20pizza%20cbd&t=&z=13&ie=UTF8&iwloc=&output=embed"
+              frameborder="0"
+              scrolling="no"
+              marginheight="0"
+              marginwidth="0"
+            ></iframe
+            > insert of Googe earth 
+            <a href="https://www.embedgooglemap.net">embedgooglemap.net</a>
+          </div>
+          <style>
+            .mapouter {
+              position: relative;
+              text-align: right;
+              height: 277px;
+              width: 511px;
+            }
+            .gmap_canvas {
+              overflow: hidden;
+              background: none !important;
+              height: 260px;
+              width: 511px;
+            }
+          </style>
+        </div>
+      </div>
+      <!-- <p>Copyrights &;</p> -->
+    </footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script
+      src="./Js/jquery-3.4.1.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./Js/script.js"></script>
+  {% endblock %}
